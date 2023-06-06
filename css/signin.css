@@ -18,8 +18,8 @@
   width: 500px;
   margin: 0 auto;
   border-radius: 6px;
-  background-color: #f6f5f0;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
+  background-color: #F6F5F0;
+  box-shadow: 2px 2px 20px rgba(0,0,0,.3);
   color: #555;
 }
 .signin__card h2 {
@@ -70,9 +70,9 @@
   font-size: 14px;
   border-right: 1px solid #ddd;
 }
-.signin__card .actions a:last-child {
-  border-right: none;
-}
 .signin__card .actions a:hover {
   text-decoration: underline;
+}
+.signin__card .actions a:last-child {
+  border-right: none;
 }

@@ -1,10 +1,9 @@
-/* VISUAL ****************************************************************************************************/
+/*VISUAL*/
 .visual {
   margin-top: 120px;
   background-image: url("../images/visual_bg.jpg");
-  background-position:  center;
+  background-position: center;
 }
-/* inner 부분은 화면의 중앙으로 몰아주는 역할 ****************************************************************************************************/
 .visual .inner {
   height: 646px;
 }
@@ -17,23 +16,23 @@
   position: absolute;
   top: 259px;
   left: 173px;
-} 
-.visual .cup1.image{
+}
+.visual .cup1.image {
   position: absolute;
   bottom: 0;
   right: -47px;
 }
-.visual .cup1.text{
+.visual .cup1.text {
   position: absolute;
   top: 38px;
   right: 171px;
 }
-.visual .cup2.image{
+.visual .cup2.image {
   position: absolute;
   bottom: 0;
   right: 162px;
 }
-.visual .cup2.text{
+.visual .cup2.text {
   position: absolute;
   top: 321px;
   right: 416px;
@@ -47,31 +46,31 @@
   opacity: 0;
 }
 
-/* notice 공지사항 *******************************************************************/
-.notice {
 
-}
+/*NOTICE*/
+/*NOTICE LINE*/
 .notice .notice-line {
   position: relative;
 }
 .notice .notice-line .bg-left {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 50%;
   height: 100%;
   background-color: #333;
-}
-.notice .notice-line .bg-right {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
+}
+.notice .notice-line .bg-right {
   width: 50%;
   height: 100%;
   background-color: #f6f5ef;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .notice .notice-line .inner {
   height: 62px;
+  z-index: 1;
   display: flex;
 }
 .notice .notice-line .inner__left {
@@ -87,7 +86,7 @@
   font-weight: 700;
   margin-right: 20px;
 }
-.notice .notice-line .inner__left .swiper {
+.notice .notice-line .inner__left .swiper-container {
   height: 62px;
   flex-grow: 1;
 }
@@ -132,34 +131,37 @@
 .notice .notice-line .inner__right .toggle-promotion .material-icons {
   font-size: 30px;
 }
+/*PROMOTION*/
 .notice .promotion {
+  /*width: auto;*/
   height: 693px;
   background-color: #f6f5ef;
   position: relative;
-  transition: height .3s;
   overflow: hidden;
+  transition: height .4s;
 }
-/* 토글버튼 누를시 숨김처리 */
 .notice .promotion.hide {
   height: 0;
 }
-.notice .promotion .swiper {
+.notice .promotion .swiper-container {
+  /* 819px 슬라이드 3개와 그 사이 여백 10px씩 = 2477px */
   width: calc(819px * 3 + 20px);
   height: 553px;
   position: absolute;
   top: 40px;
   left: 50%;
-  margin-left: calc((819px * 3 +20px) / -2);
+  margin-left: calc((819px * 3 + 20px) / -2);
 }
 .notice .promotion .swiper-slide {
+  position: relative;
   opacity: .5;
   transition: opacity 1s;
-  position: relative;
 }
 .notice .promotion .swiper-slide-active {
   opacity: 1;
 }
 .notice .promotion .swiper-slide .btn {
+  /*width: 130px;*/
   position: absolute;
   bottom: 0;
   left: 0;
@@ -167,35 +169,38 @@
   margin: auto;
 }
 .notice .promotion .swiper-pagination {
-  bottom: 0;
+  bottom: 40px;
   left: 0;
   right: 0;
+  z-index: 0;
 }
-.notice .promotion .swiper-pagination-bullet {
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
   background-color: transparent;
   background-image: url("../images/promotion_slide_pager.png");
-  width: 12px;
+  width: 13px;
   height: 12px;
   margin-right: 6px;
   outline: none;
 }
-.notice .promotion .swiper-pagination-bullet:last-child {
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
   margin-right: 0;
 }
-.notice .promotion .swiper-pagination-bullet-active {
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
   background-image: url("../images/promotion_slide_pager_on.png");
 }
 .notice .promotion .swiper-prev,
 .notice .promotion .swiper-next {
   width: 42px;
   height: 42px;
+  outline: none;
   border: 2px solid #333;
   border-radius: 50%;
   position: absolute;
+  /* Swiper Container 높이의 절반만큼 끌어올림 */
+  /* 버튼 높이의 절반만큼 추가로 끌어올림 */
   top: 300px;
   z-index: 1;
   cursor: pointer;
-  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,7 +220,8 @@
   color: #fff;
 }
 
-/* 리워즈 */
+
+/*REWARDS*/
 .rewards {
   position: relative;
 }
@@ -236,18 +242,19 @@
   right: 0;
 }
 .rewards .inner {
-  background-image: url(../images/rewards.jpg);
+  background-image: url("../images/rewards.jpg");
   height: 241px;
 }
 .rewards .btn-group {
   position: absolute;
-  bottom: 24px;
   right: 0;
+  bottom: 24px;
   width: 250px;
   display: flex;
   flex-wrap: wrap;
 }
 .rewards .btn-group .btn.sign-up {
+  /*width: 130px;*/
   margin-right: 10px;
 }
 .rewards .btn-group .btn.sign-in {
@@ -255,40 +262,43 @@
 }
 .rewards .btn-group .btn.gift {
   margin-top: 10px;
-  flex-grow: 1;
+  flex: 1;
 }
 
-/* 유튜브 비디오 */
+
+/*YOUTUBE VIDEO*/
 .youtube {
   position: relative;
   height: 700px;
-  background-color:  #333;
+  background-color: #333;
   overflow: hidden;
 }
 .youtube .youtube__area {
   width: 1920px;
-  background-color: green;
   position: absolute;
+  /* 16비율 */
   left: 50%;
   margin-left: calc(1920px / -2);
+  /* 9비율 */
   top: 50%;
   margin-top: calc(1920px * 9 / 16 / -2);
 }
 .youtube .youtube__area::before {
   content: "";
   display: block;
+  /* 16:9 영상 비율로 요소 크기 만들기! */
   width: 100%;
   height: 0;
   padding-top: 56.25%;
 }
 .youtube .youtube__cover {
-  background-image: url("../images/video_cover_pattern.png");
-  background-color: rgba(0,0,0,.3);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(0,0,0,.3);
+  background-image: url("../images/video_cover_pattern.png");
 }
 #player {
   width: 100%;
@@ -298,7 +308,7 @@
   left: 0;
 }
 .youtube .inner {
-  height: 700px;
+  height: inherit;
 }
 .youtube .floating1 {
   position: absolute;
@@ -312,7 +322,7 @@
 }
 
 
-/* 시즌프로덕트섹션 */
+/*SEASON PRODUCT*/
 .season-product {
   background-image: url("../images/season_product_bg.jpg");
 }
@@ -335,11 +345,9 @@
 .season-product .text-group .description {
   margin-bottom: 15px;
 }
-.season-product .text-group .more {
 
-}
 
-/* 리저브커피섹션 */
+/*RESERVE COFFEE*/
 .reserve-coffee {
   background-image: url("../images/reserve_bg.jpg");
 }
@@ -362,24 +370,24 @@
   right: 0;
 }
 
-/* 픽유어페이보릿섹션 */
+
+/*PICK YOUR FAVORITE*/
 .pick-your-favorite {
-  /* 페럴렉스 */
- background-image: url("../images/favorite_bg.jpg");
- background-repeat: no-repeat;
- background-position: center;
- background-attachment: fixed;
- background-size: cover;
+  background-image: url("../images/favorite_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .pick-your-favorite .inner {
   padding: 110px 0;
 }
 .pick-your-favorite .text-group {
+  width: 362px;
   margin-left: 100px;
   display: flex;
-  width: 362px;
-  flex-wrap: wrap;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 .pick-your-favorite .text-group .title {
   margin-bottom: 40px;
@@ -388,7 +396,8 @@
   margin-bottom: 40px;
 }
 
-/* 리저브스토어섹션 메달뒤집기*/
+
+/*RESERVE STORE*/
 .reserve-store {
   background-image: url("../images/reserve_store_bg.jpg");
   background-repeat: no-repeat;
@@ -409,11 +418,11 @@
 }
 .reserve-store .medal .front,
 .reserve-store .medal .back {
-  width: 334px;
-  height: 334px;
+  width: inherit;
+  height: inherit;
   position: absolute;
-  backface-visibility: hidden;
   transition: 1s;
+  backface-visibility: hidden;
 }
 .reserve-store .medal .front {
   transform: rotateY(0deg);
@@ -435,7 +444,8 @@
   margin: auto;
 }
 
-/* 파인드스토어섹션 */
+
+/*FIND STORE*/
 .find-store {
   background-image: url("../images/find_store_bg.jpg");
 }
@@ -453,9 +463,9 @@
   right: 0;
 }
 .find-store .picture {
-  position: absolute;
   border-radius: 50%;
-  box-shadow: 2px 2px 8px rgba(0,0,0,.5);
+  box-shadow: 2px 2px 8px 0 rgba(0,0,0,.5);
+  position: absolute;
 }
 .find-store .picture1 {
   top: -60px;
@@ -477,14 +487,15 @@
   margin-bottom: 20px;
 }
 
-/* 어워즈섹션 */
+
+/*AWARDS*/
 .awards {
   background-color: #272727;
 }
 .awards .inner {
   padding: 40px 0;
 }
-.awards .swiper {
+.awards .swiper-container {
   width: 100%;
   height: 40px;
 }
@@ -492,19 +503,20 @@
 .awards .swiper-next {
   width: 42px;
   height: 42px;
+  outline: none;
   border: 2px solid #fff;
   border-radius: 50%;
-  outline: none;
   color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   opacity: .3;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  transition: .4s;
 }
 .awards .swiper-prev {
   left: -100px;
@@ -518,20 +530,21 @@
   color: #333;
 }
 
-/* 최상단 이동 버튼 */
+
+/*SCROLL TO TOP*/
 #to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9;
   width: 42px;
   height: 42px;
   background-color: #333;
   color: #fff;
   border: 2px solid #fff;
   border-radius: 10px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 9;
-  cursor: pointer;
-} 
+}

@@ -17,16 +17,16 @@
 .signin__card {
   width: 500px;
   margin: 0 auto;
-  border-radius: 6px;
+  border-radius: 8px;
   background-color: #f6f5f0;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
   color: #555;
 }
 .signin__card h2 {
   padding: 30px;
   font-size: 18px;
   text-align: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 5px solid #ddd;
 }
 .signin__card h2 strong {
   font-weight: 700;
@@ -59,7 +59,7 @@
 }
 .signin__card .actions {
   display: flex;
-  border-top: 1px solid #ddd;
+  border-top: 5px solid #ddd;
 }
 .signin__card .actions a {
   flex-grow: 1;
@@ -68,7 +68,7 @@
   padding: 20px;
   color: #555;
   font-size: 14px;
-  border-right: 1px solid #ddd;
+  border-right: 3px solid #ddd;
 }
 .signin__card .actions a:last-child {
   border-right: none;
